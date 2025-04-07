@@ -2,7 +2,8 @@
 
 namespace Drugstore_Task.Controllers
 {
-    public class ContactController : Controller
+    // Контроллер страницы About
+    public class ContactController : Controller  
     {
         public IActionResult Contact()
         {
