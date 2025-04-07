@@ -2,7 +2,7 @@
 
 namespace Drugstore_Task.Models
 {
-    public class Feedback
+    public class Feedback // Модель FeedBack 
     {
         [Display(Name = " Введите Имя")]
         [Required(ErrorMessage ="Вам нужно ввести  ваше имя")]
@@ -18,7 +18,7 @@ namespace Drugstore_Task.Models
 
         [Display(Name = " Введите вашу почту")]
         [Required(ErrorMessage = "Вам нужно ввести  вашу почту")]
-        public string Email { get; set; }
+        public string Email { get; set; } 
 
         [Display(Name = " Введите ваше сообщение")]
         [StringLength(0, ErrorMessage ="Сообщение не может быть пустым!")]
