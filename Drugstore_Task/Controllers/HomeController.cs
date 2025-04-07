@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Drugstore_Task.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller 
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -22,7 +22,7 @@ namespace Drugstore_Task.Controllers
         {
             return View();
         }
-        public IActionResult Contact() //  contacts/about
+        public IActionResult Contact() // contacts/about
         {
             return View();
         }
