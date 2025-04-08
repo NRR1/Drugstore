@@ -9,7 +9,7 @@ namespace Drugstore_Task.Controllers
         {
             return View();
         }
-        public IActionResult Check(Contact contact) // Ситраница контакты
+        public IActionResult Check(ContactController contact) // Ситраница контакты
         {
             if (ModelState.IsValid)
             {
