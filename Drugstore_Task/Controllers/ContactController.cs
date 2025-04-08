@@ -13,7 +13,7 @@ namespace Drugstore_Task.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Redirect("/");
+                return Redirect("/"); //Возвращение на главную
             }
             return View("Contact");
         }
