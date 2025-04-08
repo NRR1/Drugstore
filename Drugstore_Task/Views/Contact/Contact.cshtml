@@ -1,31 +1,37 @@
 ﻿@model Feedback
 @{
-    ViewData["Title"] = "Обратная связь";
+    ViewData["Contact"] = "Обратная связь";
 }
+<body>
+    <h1>Обратная связь</h1>
+    <form method="post" asp-controller="Contact" asp-action="Check">
+        <label asp-for="Name"></label>
+        <input asp-formaction="Name" />
+        <span asp-asp-validation-for="Name"></span>
 
-<h1>Обратная связь</h1>
-<form method="post" asp-controller="Contact" asp-action="Check">  
-    <label asp-for="Name"></label>
-    <input asp-formaction="Name"/>
-    <span asp-asp-validation-for="Name"></span>
+        <label asp-for="Surname"></label>
+        <input asp-formaction="Surname" />
+        <span asp-asp-validation-for="Surname"></span>
 
-     <label asp-for="Surname"></label>
-    <input asp-formaction="Surname" />
-    <span asp-asp-validation-for="Surname"></span>
-
-    <label asp-for="Age"></label>
-    <input asp-formaction="Age" />
-    <span asp-asp-validation-for="Age"></span>
-
-
-    <label asp-for="Email"></label>
-    <input asp-formaction="Email" />
-    <span asp-asp-validation-for="Email"></span>
+        <label asp-for="Age"></label>
+        <input asp-formaction="Age" />
+        <span asp-asp-validation-for="Age"></span>
 
 
-    <label asp-for="Message"></label>
-    <input asp-formaction="Message" />
-    <span asp-asp-validation-for="Message"></span>
+        <label asp-for="Email"></label>
+        <input asp-formaction="Email" />
+        <span asp-asp-validation-for="Email"></span>
 
-    <input type="submit" value="Отправить" />
-</form>
+
+        <label asp-for="Message"></label>
+        <input asp-formaction="Message" />
+        <span asp-asp-validation-for="Message"></span>
+
+        <input type="submit" value="Отправить" />
+    </form>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+
+

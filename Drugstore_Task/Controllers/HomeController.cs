@@ -22,7 +22,7 @@ namespace Drugstore_Task.Controllers
         {
             return View();
         }
-        public IActionResult Contact() // contacts/about
+        public IActionResult Contacts() // contacts/about
         {
             return View();
         }

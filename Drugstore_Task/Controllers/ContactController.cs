@@ -2,14 +2,14 @@
 
 namespace Drugstore_Task.Controllers
 {
-    // Контроллер страницы About
+    // Контроллер страницы Contact
     public class ContactController : Controller  
     {
         public IActionResult Contact()
         {
             return View();
         }
-        public IActionResult Check(ContactController contact) // Ситраница контакты
+        public IActionResult Check(ContactController Contact) // Ситраница контакты
         {
             if (ModelState.IsValid)
             {
