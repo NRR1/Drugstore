@@ -25,7 +25,7 @@ namespace Drugstore_Task.Models
         public string Message { get; set; }
         [Display(Name = " Введите ваш номер телефона")]
         [StringLenght(0,? ErrorMessage = "Поле не должно быть пустым")]
-        public int Number
+        public int Number [ get; set;]
         {
     }
 }
