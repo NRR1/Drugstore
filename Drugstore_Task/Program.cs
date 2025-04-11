@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.Negotiate;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
-
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
