@@ -5,17 +5,17 @@ namespace Drugstore_Task.Controllers
     // Контроллер страницы Contact
     public class ContactController : Controller  
     {
-        public IActionResult Contact()
+        public IActionResult About()
         {
             return View();
         }
-        public IActionResult Check(ContactController Contact) // Ситраница контакты
+        public IActionResult Check(ContactController contact) // Ситраница контакты
         {
             if (ModelState.IsValid)
             {
                 return Redirect("/"); //Возвращение на главную
             }
-            return View("Contact");
+            return View();
         }
     }
 }
