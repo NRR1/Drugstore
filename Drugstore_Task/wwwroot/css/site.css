@@ -30,15 +30,15 @@ body {
   text-align: start;
 }
 
-/*==================== GOOGLE FONTS ====================*/
+/*==================== Подключение шрифтов ====================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
-/*==================== VARIABLES CSS ====================*/
+/*==================== Переменные CSS ====================*/
 :root {
     /*========== Colors ==========*/
     --text-color: #000000;
     --bg-color: #222222;
-    /*========== Font and typography ==========*/
+    /*========== Шрифт и типографика ==========*/
     --body-font: "Poppins", sans-serif;
     --normal-font-size: 0.938rem;
 }
@@ -231,7 +231,7 @@ body {
             background-color: var(--clr);
         }
 
-
+        /*Адаптивная верстка CSS*/
      .layout {
     display: grid;
     gap: 4px;
