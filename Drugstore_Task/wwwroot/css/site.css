@@ -458,11 +458,6 @@ label[for=btn] {
     }
 
 
-
-
-
-
-
 .lights {
     position: absolute;
     width: calc(100% - calc(var(--sz) * 1.425));
