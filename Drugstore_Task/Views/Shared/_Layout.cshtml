@@ -29,96 +29,48 @@
                 </span>
             </header> 
             @*В дальнейшем навигация или поиск*@
-             @*  <nav>
-                <div class="container">
-                    <nav>
-                        <ul class="mcd-menu">
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-home"></i>
-                                    <strong>Home</strong>
-                                    <small>sweet home</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="active">
-                                    <i class="fa fa-edit"></i>
-                                    <strong>About us</strong>
-                                    <small>sweet home</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-gift"></i>
-                                    <strong>Features</strong>
-                                    <small>sweet home</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-globe"></i>
-                                    <strong>News</strong>
-                                    <small>sweet home</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-comments-o"></i>
-                                    <strong>Blog</strong>
-                                    <small>what they say</small>
-                                </a>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-group"></i>Our Team</a>
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
-                                                    <li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
-                                    <li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-picture-o"></i>
-                                    <strong>Portfolio</strong>
-                                    <small>sweet home</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <strong>Contacts</strong>
-                                    <small>drop a line</small>
-                                </a>
-                            </li>
-                            <li class="float">
-                                <a class="search">
-                                    <input type="text" value="search ...">
-                                    <button><i class="fa fa-search"></i></button>
-                                </a>
-                                <a href="" class="search-mobile">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav> 
-                 </div>
-              </nav> *@
-            <main>
+               <nav>
                 <form class="form-search" method="get" action="/search" target="_blank">
                     <input type="button" onclick="FindOnPage('textToFind')" value="Найти" />
                     <input type="text" name="q" id="textToFind" placeholder="поиск" value="" />
                 </form>
+
+                <script type="text/javascript" language="JavaScript">
+                    var copy_page;
+
+                    function FindOnPage(inputId) {
+                        var obj = document.getElementById(inputId),
+                        objValue = obj.value.replace(/^[\s\A-z\\\-=_''""\.]+|[\s\A-z\\\-=_''""\.]+$/gi, '').replace(/^[\s\A-z\\\-=_''""\.]+|[\s\A-z\\\-=_''""\.]+$/gi, '');
+
+                        if (objValue == '') { alert('Вы ничего не ввели'); return }
+
+                        if (document.location.href.indexOf('#') < 0) copy_page = document.body.innerHTML;
+                        else document.body.innerHTML = copy_page;
+
+                        var ttf = new RegExp(objValue.split('').join('-?'), 'g'),
+                        db = document.body.innerHTML,
+                        rz = db.match(ttf);
+                        if (rz == null) { alert('Ничего не найдено, проверьте правильность ввода!'); return }
+
+                        obj.value = '';
+                        document.location.href = document.location.href.split('#')[0] + '#' + objValue;
+
+                        var rz1 = new Array(); rz1[0] = rz[0];
+                        var rz_obr = new Array(); rz_obr[rz1[0]] = 1;
+                        if (rz.length > 1)
+                            for (var k = j = 1, lj = rz.length; j < lj; j++)
+                                if (!rz_obr[rz[j]]) { rz1[k++] = rz[j]; rz_obr[rz[j]] = 1 }
+
+                        for (j = 0, lj = rz1.length; j < lj; j++) {
+                            var z = (!j) ? (' id="' + objValue + '"') : '';
+                            document.body.innerHTML = document.body.innerHTML.replace(new RegExp(rz1[j], 'g'), '<span style="background: red"' + z + '>' + rz1[j] + '</span>');
+                        }
+                        document.location.href = document.location.href.split('#')[0] + '#' + objValue;
+                    }
+                </script>
+            </nav> 
+            <main>
+                
                  <section class="container">
                     <section class="card__container">
                         <div class="card__bx" style="--clr: #89ec5b">
