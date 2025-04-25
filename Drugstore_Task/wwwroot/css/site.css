@@ -43,6 +43,7 @@ body {
     /*========== Шрифт и типографика ==========*/
     --body-font: "Poppins", sans-serif;
     --normal-font-size: 0.938rem;
+
 }
 
 @media screen and (min-width: 968px) {
