@@ -8,8 +8,9 @@ namespace Drugstore_Task.Models
         [Required(ErrorMessage = "Такого лекарства нет.")]
         public string Name_Product { get; set; }
 
-        [Display(Name = " Введите Фамилию")]
-        [Required(ErrorMessage = "Вам нужно ввести  вашу фамилию")]
-        public string Surname { get; set; }
+        [Display(Name = "Производитель лекарства")]
+        [Required(ErrorMessage = "Такого производителя нет")]
+        public string manufacturer { get; set; }
+
     }
 }
