@@ -4,8 +4,8 @@ namespace Drugstore_Task.Models
 {
     public class medicine_Product
     {
-        [Display(Name = " Введите Имя")]
-        [Required(ErrorMessage = "Вам нужно ввести  ваше имя")]
-        public string Name { get; set; }
+        [Display(Name = " Назовите название лекарства.")]
+        [Required(ErrorMessage = "Такого лекарства нет.")]
+        public string Name_Product { get; set; }
     }
 }
