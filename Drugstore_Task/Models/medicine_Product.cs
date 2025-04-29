@@ -15,6 +15,6 @@ namespace Drugstore_Task.Models
         [Display(Name = " Год выпуска")]
         [Required(ErrorMessage = "Год выпуска не найден.")]
         public string Year { get; set; }
-
+        
     }
 }
