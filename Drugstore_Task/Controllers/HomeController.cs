@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 using Drugstore_Task.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +34,7 @@ namespace Drugstore_Task.Controllers
         }
         //public  IActionResult MedicineController()
         //{
-           
+        //return View();
         //}
     }
 }
