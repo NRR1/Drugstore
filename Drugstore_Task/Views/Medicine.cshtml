@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <body>
-    <h1>Обратная связь</h1>
+    @* <h1>Обратная связь</h1>
     <form method="post" asp-controller="Contact" asp-action="Check">
         <label asp-for="Name_Product"></label>
         <input asp-formaction="Name_Product" />
@@ -19,7 +19,7 @@
         <input asp-formaction="Year" />
         <span asp-asp-validation-for="Year"></span>
         <input type="submit" value="Отправить" />
-    </form>
+    </form> *@
     <div>
         @RenderBody()
     </div>
