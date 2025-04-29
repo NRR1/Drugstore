@@ -4,3 +4,23 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<body>
+    <h1>Обратная связь</h1>
+    <form method="post" asp-controller="Contact" asp-action="Check">
+        <label asp-for="Name_Product"></label>
+        <input asp-formaction="Name" />
+        <span asp-asp-validation-for="Name"></span>
+
+        <label asp-for="manufacturer"></label>
+        <input asp-formaction="Surname" />
+        <span asp-asp-validation-for="Surname"></span>
+
+        <label asp-for="Year"></label>
+        <input asp-formaction="Age" />
+        <span asp-asp-validation-for="Age"></span>
+        <input type="submit" value="Отправить" />
+    </form>
+    <div>
+        @RenderBody()
+    </div>
+</body>
