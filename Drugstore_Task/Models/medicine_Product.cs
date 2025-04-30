@@ -6,6 +6,7 @@ namespace Drugstore_Task.Models
     {
         public int Id { get; set; }
 
+
         [Display(Name = "Скажите название лекарства.")]
         [Required(ErrorMessage = "Такого лекарства нет.")]
         public string Name_Product { get; set; }
