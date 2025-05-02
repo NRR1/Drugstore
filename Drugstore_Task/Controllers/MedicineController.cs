@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Drugstore_Task.Controllers
 {
 
-      public class MedicineController : Controller
+    public class MedicineController : Controller
     {
         // GET: MedicineController
         public ActionResult Index()
