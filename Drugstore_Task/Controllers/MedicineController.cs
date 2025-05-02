@@ -59,6 +59,7 @@ namespace Drugstore_Task.Controllers
                 return View();
             }
         }
+
         // GET: MedicineController/Delete/5
         public ActionResult Delete(int id)
         {
