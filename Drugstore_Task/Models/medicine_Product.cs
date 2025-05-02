@@ -12,7 +12,7 @@ namespace Drugstore_Task.Models
 
         [Display(Name = "Назовите производителя лекарства")]
         [Required(ErrorMessage = "Такого производителя нет")]
-        public string manufacturer { get; set; }
+        public string { get; set; }
 
         [Display(Name = " Год выпуска")]
         [Required(ErrorMessage = "Год выпуска не найден.")]
