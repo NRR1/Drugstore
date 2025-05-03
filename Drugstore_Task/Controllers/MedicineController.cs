@@ -9,7 +9,7 @@ namespace Drugstore_Task.Controllers
         // GET: MedicineController
         public ActionResult Index()
         {
-            return View();
+                    return View();
         }
 
         // GET: MedicineController/Details/5
