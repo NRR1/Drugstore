@@ -78,7 +78,6 @@ namespace Drugstore_Task.Controllers
             catch
             {
                 return View();
-
             }
         }
     }
