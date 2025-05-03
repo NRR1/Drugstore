@@ -8,7 +8,6 @@ namespace Drugstore_Task.Controllers
     {
         // GET: MedicineController
         public ActionResult Index()
-
         {
         return View();
         }
