@@ -9,7 +9,11 @@ namespace Drugstore_Task.Controllers
         // GET: MedicineController
         public ActionResult Index()
         {
-        return View();
+            if (ModelState.IsValid)
+            {
+                return Redirect("/"); //Возвращение на главную
+            }
+            return View();
         }
 
         // GET: MedicineController/Details/5
