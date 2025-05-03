@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace Drugstore_Task.Models
 {
     public class medicine_Product
