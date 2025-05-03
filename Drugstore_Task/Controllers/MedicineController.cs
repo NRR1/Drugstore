@@ -16,6 +16,7 @@ namespace Drugstore_Task.Controllers
         public ActionResult Details(int id)
         {
             return View();
+
         }
 
         // GET: MedicineController/Create
