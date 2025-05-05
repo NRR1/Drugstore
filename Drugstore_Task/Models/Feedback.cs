@@ -29,4 +29,3 @@ namespace Drugstore_Task.Models
         
     }
 }
-
