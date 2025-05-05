@@ -13,6 +13,7 @@ namespace Drugstore_Task.Controllers
         {
             _logger = logger;
         }
+        
 
         public IActionResult Index()
         {
