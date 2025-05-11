@@ -4,79 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Drugstore_Task</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/Drugstore_Task.style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-   @*  <a href="/">Главная</a> *@
-  @*@ <a href="/Contact">Обратная связь</a> *@
     <main>
         @RenderBody()
-        @*Адаптивная верстка*@
+
         <div class="layout">
             <header>
                 <span style="font-size:30px;">
                     <span style="font-family:Times New Roman,Times,serif">
                         <marquee height="40" width="1900" vspace="3" hspace="20" align="center">
-                            <b>
-                                Добро пожаловать!
-                            </b>
+                            <b>Добро пожаловать!</b>
                         </marquee>
                     </span>
                 </span>
-            </header> 
-            @*Навигация и поиск*@
-               <nav>
-                <form class="form-search" method="get" action="/search" target="_blank">
-                    <input type="button" onclick="FindOnPage('textToFind')" value="Найти" />
-                    <input type="text" name="q" id="textToFind" placeholder="поиск" value="" />
+            </header>
+
+            <nav>
+                <!-- Серверная форма поиска -->
+                <form class="form-search" method="get" action="/Search">
+                    <input type="text" name="q" placeholder="поиск..." />
+                    <input type="submit" value="Найти" />
                 </form>
+            </nav>
 
-                <script type="text/javascript" language="JavaScript">
-                    var copy_page;
-
-                    function FindOnPage(inputId) {
-                        var obj = document.getElementById(inputId),
-                        objValue = obj.value.replace(/^[\s\A-z\\\-=_''""\.]+|[\s\A-z\\\-=_''""\.]+$/gi, '').replace(/^[\s\A-z\\\-=_''""\.]+|[\s\A-z\\\-=_''""\.]+$/gi, '');
-
-                        if (objValue == '') { alert('Вы ничего не ввели'); return }
-
-                        if (document.location.href.indexOf('#') < 0) copy_page = document.body.innerHTML;
-                        else document.body.innerHTML = copy_page;
-
-                        var ttf = new RegExp(objValue.split('').join('-?'), 'g'),
-                        db = document.body.innerHTML,
-                        rz = db.match(ttf);
-                        if (rz == null) { alert('Ничего не найдено, проверьте правильность ввода!'); return }
-
-                        obj.value = '';
-                        document.location.href = document.location.href.split('#')[0] + '#' + objValue;
-
-                        var rz1 = new Array(); rz1[0] = rz[0];
-                        var rz_obr = new Array(); rz_obr[rz1[0]] = 1;
-                        if (rz.length > 1)
-                            for (var k = j = 1, lj = rz.length; j < lj; j++)
-                                if (!rz_obr[rz[j]]) { rz1[k++] = rz[j]; rz_obr[rz[j]] = 1 }
-
-                        for (j = 0, lj = rz1.length; j < lj; j++) {
-                            var z = (!j) ? (' id="' + objValue + '"') : '';
-                            document.body.innerHTML = document.body.innerHTML.replace(new RegExp(rz1[j], 'g'), '<span style="background: red"' + z + '>' + rz1[j] + '</span>');
-                        }
-                        document.location.href = document.location.href.split('#')[0] + '#' + objValue;
-                    }
-                </script>
-            </nav> 
-           @*Главная секция main*@
             <main>
-                 <section class="container">
+                <section class="container">
                     <section class="card__container">
                         <div class="card__bx" style="--clr: #89ec5b">
                             <div class="card__data">
                                 <div class="card__icon">
-                                    <i class="fa-solid fa-paintbrush"></i>
+                                    <i class="fa fa-paint-brush"></i>
                                 </div>
                                 <div class="card__content">
                                     <h3>Проектирование</h3>
@@ -85,10 +47,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card__bx" style="--clr: #eb5ae5">
                             <div class="card__data">
                                 <div class="card__icon">
-                                    <i class="fa-solid fa-code"></i>
+                                    <i class="fa fa-code"></i>
                                 </div>
                                 <div class="card__content">
                                     <h3>Разработка</h3>
@@ -97,10 +60,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="card__bx" style="--clr: #5b98eb">
                             <div class="card__data">
                                 <div class="card__icon">
-                                    <i class="fa-brands fa-searchengin"></i>
+                                    <i class="fa fa-search"></i>
                                 </div>
                                 <div class="card__content">
                                     <h3>Руководство</h3>
@@ -111,69 +75,15 @@
                         </div>
                     </section>
                 </section>
-                @*Нижняя часть main*@
+
                 <article class="widget">Виджет</article>
                 <article class="statistics">Статистика</article>
             </main>
 
-         <footer>
-
-          @*  <div class="toggle voice">
-                    <span style="font-size:30px; height="40" width="1900" vspace="3" hspace="20" align="center">
-                  
-         <input type="checkbox" id="btn">
-        <label for="btn">
-            <span class="thumb"></span>
-        </label>
-        <div class="lights">
-            <span class="light-off"></span>
-            <span class="light-on"></span>
-                       </div>
-                </div> *@
+            <footer>
                 <a href="/">Главная</a>
-                @* <p><span id="current-year"></span>©2025 </p> *@
-        </footer>
-  </main>
-    
-  @*   <a class="bear-link"
-       href="https://twitter.com/intent/follow?screen_name=jh3yy"
-       target="_blank"
-       rel="noreferrer noopener">
-        <svg class="w-9"
-             viewBox="0 0 969 955"
-             fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-            <circle cx="161.191"
-                    cy="320.191"
-                    r="133.191"
-                    stroke="currentColor"
-                    stroke-width="20"></circle>
-            <circle cx="806.809"
-                    cy="320.191"
-                    r="133.191"
-                    stroke="currentColor"
-                    stroke-width="20"></circle>
-            <circle cx="695.019"
-                    cy="587.733"
-                    r="31.4016"
-                    fill="currentColor"></circle>
-            <circle cx="272.981"
-                    cy="587.733"
-                    r="31.4016"
-                    fill="currentColor"></circle>
-            <path d="M564.388 712.083C564.388 743.994 526.035 779.911 483.372 779.911C440.709 779.911 402.356 743.994 402.356 712.083C402.356 680.173 440.709 664.353 483.372 664.353C526.035 664.353 564.388 680.173 564.388 712.083Z"
-                  fill="currentColor"></path>
-            <rect x="310.42"
-                  y="448.31"
-                  width="343.468"
-                  height="51.4986"
-                  fill="#FF1E1E"></rect>
-            <path fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M745.643 288.24C815.368 344.185 854.539 432.623 854.539 511.741H614.938V454.652C614.938 433.113 597.477 415.652 575.938 415.652H388.37C366.831 415.652 349.37 433.113 349.37 454.652V511.741L110.949 511.741C110.949 432.623 150.12 344.185 219.845 288.24C289.57 232.295 384.138 200.865 482.744 200.865C581.35 200.865 675.918 232.295 745.643 288.24Z"
-                  fill="currentColor"></path>
-        </svg>
-    </a> *@
-   </body>
-   </div>
+            </footer>
+        </div>
+    </main>
+</body>
 </html>
