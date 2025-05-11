@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace Drugstore_Task.Models
 {
-    public class medicine_Product
+    public class MedicineViewModel
     {
         public int Id { get; set; }
 

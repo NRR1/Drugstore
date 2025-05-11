@@ -13,7 +13,11 @@ namespace Drugstore_Task.Controllers
         {
             _logger = logger;
         }
-
+        public IActionResult Search(string q)
+        {
+            ViewBag.Query = q;
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
