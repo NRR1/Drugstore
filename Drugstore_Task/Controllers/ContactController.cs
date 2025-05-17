@@ -5,6 +5,11 @@ namespace Drugstore_Task.Controllers
     // Контроллер страницы Contact
     public class ContactController : Controller  
     {
+
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult About()
         {
             return View();

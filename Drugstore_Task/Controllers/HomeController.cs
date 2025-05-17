@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
 using Drugstore_Task.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +15,7 @@ namespace Drugstore_Task.Controllers
         public IActionResult Search(string q)
         {
             ViewBag.Query = q;
-            return View();
+            return RedirectToAction("Search", "Home");
         }
         public IActionResult Index()
         {

@@ -1,5 +1,4 @@
 ﻿using Drugstore_Task.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Drugstore_Task.Controllers
