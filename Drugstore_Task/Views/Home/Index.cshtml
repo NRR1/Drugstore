@@ -8,4 +8,57 @@
 @{
     ViewData["Contact"] = "Обратная связь";
 }
+<form method="get" action="/Home/Search">
+    <input type="text" name="q" placeholder="Поиск..." />
+    <input type="submit" value="Найти" />
+</form>
 <h1>Скоро.</h1>
+
+
+<main>
+    <section class="container">
+        <section class="card__container">
+            <div class="card__bx" style="--clr: #89ec5b">
+                <div class="card__data">
+                    <div class="card__icon">
+                        <i class="fa fa-paint-brush"></i>
+                    </div>
+                    <div class="card__content">
+                        <h3>Проектирование</h3>
+                        <p>Скоро</p>
+                        <a href="/Home/Privacy">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card__bx" style="--clr: #eb5ae5">
+                <div class="card__data">
+                    <div class="card__icon">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <div class="card__content">
+                        <h3>Разработка</h3>
+                        <p>Скоро</p>
+                        <a href="/Contact/Index">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card__bx" style="--clr: #5b98eb">
+                <div class="card__data">
+                    <div class="card__icon">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="card__content">
+                        <h3>Руководство</h3>
+                        <p>Скоро</p>
+                        <a href="/Home/Creators">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <article class="widget">Виджет</article>
+    <article class="statistics">Статистика</article>
+</main>
