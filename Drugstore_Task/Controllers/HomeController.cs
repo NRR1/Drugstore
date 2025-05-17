@@ -19,7 +19,7 @@ namespace Drugstore_Task.Controllers
         }
         public IActionResult Index() => View();
 
-        public IActionResult Creators() => RedirectToAction("Creators", "Home");
+        public IActionResult Creators() => View();
 
         public IActionResult Privacy() => View();
         public IActionResult About() => View();// contacts/about

@@ -8,6 +8,7 @@ namespace Drugstore_Task.Controllers
 
         public IActionResult Index() => View();
         public IActionResult About() => View();
+        public IActionResult Creators() => RedirectToAction("Creators", "Home");
         public IActionResult Check(ContactController contact) // Ситраница контакты
         {
             if (ModelState.IsValid)
