@@ -17,27 +17,17 @@ namespace Drugstore_Task.Controllers
             ViewBag.Query = q;
             return RedirectToAction("Search", "Home");
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View();
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult About() // contacts/about
-        {
-            return View();
-        }
+        public IActionResult Creators() => RedirectToAction("Creators", "Home");
+
+        public IActionResult Privacy() => View();
+        public IActionResult About() => View();// contacts/about
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        //public  IActionResult MedicineController()
-        //{
-        //return View();
-        //}
     }
 }
