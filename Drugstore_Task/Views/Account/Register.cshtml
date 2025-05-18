@@ -1,0 +1,47 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<h1>Регистрация</h1>
+
+<h4>Регистрация</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register" method="post">
+            <div>
+                <label>Имя</label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label>Фамилия</label>
+                <input asp-for="Surname" />
+                <span asp-validation-for="Surname"></span>
+            </div>
+            <div>
+                <label>Отчество</label>
+                <input asp-for="Pathronomic" />
+                <span asp-validation-for="Pathronomic"></span>
+            </div>
+            <div>
+                <label>Почта</label>
+                <input asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div>
+                <label>Логин</label>
+                <input asp-for="Login" />
+                <span asp-validation-for="Login"></span>
+            </div>
+            <div>
+                <label>Пароль</label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>

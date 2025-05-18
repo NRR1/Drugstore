@@ -1,0 +1,44 @@
+﻿@model Drugstore_Task.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form method="post">
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <strong>Ошибки при входе:</strong>
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <hr/>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Login" method="post">
+                <div height="10" width="10" class="form-group">
+                    <label for="Login">Login</label>
+                    <input type="text" class="form-control" id="Login" name="Login" value="@Model.Login" />
+                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control" id="Password" name="Password" value="@Model.Password" />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+
+</form>
